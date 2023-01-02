@@ -78,8 +78,42 @@ class MainActivity : ComponentActivity() {
                                 .align(Alignment.TopCenter)
                         )
                     }
+                    TicTacToeField(
+                        state = state,
+                        onTapInField = viewModel::finishTurn,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .aspectRatio(1f)
+                            .padding(16.dp)
+                    )
+
+                    if (state.isBoardFull || state.winningPlayer != null) {
+                        Text(
+                            text = when (state.winningPlayer) {
+                                'X' -> "Player X won!"
+                                'O' -> "Player O won!"
+                                else -> "It's a draw!"
+                            },
+                            fontSize = 32.sp,
+                            modifier = Modifier
+                                .padding(bottom = 32.dp)
+                                .align(Alignment.BottomCenter)
+                        )
+                    }
+
+                    if (isConnecting) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.White),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            CircularProgressIndicator()
+                        }
+                    }
                 }
             }
         }
     }
 }
+
