@@ -27,7 +27,7 @@
 
 - Run Application.kt in the backend project
 
-- In file app/src/main/java/com/example/tictactoe/data/KtorRealTimeMessagingClient.kt
+- In file app/src/main/java/com/example/tictactoe/data/KtorRealTimeMessagingClient.kt find 
 
 ```kotlin
 url("ws://192.168.0.168:8080/play")
