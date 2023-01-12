@@ -20,7 +20,6 @@
       - Content Negotiation
       - Call Logging
    - Dagger Hilt
-   - MVVM
 
 
 ## Setup
