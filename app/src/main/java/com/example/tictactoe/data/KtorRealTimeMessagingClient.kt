@@ -10,10 +10,12 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 class KtorRealTimeMessagingClient(
-    private val client: HttpClient
-): RealTimeMessagingClient {
+    private val client: HttpClient,
+) : RealTimeMessagingClient {
 
     private var session: WebSocketSession? = null
+
+    // Listen to websocket messages
 
     override fun getGameStateStream(): Flow<GameState> {
         return flow {
@@ -30,11 +32,15 @@ class KtorRealTimeMessagingClient(
         }
     }
 
+    // Function to send something to server
+
     override suspend fun sendAction(action: MakeTurn) {
         session?.outgoing?.send(
             Frame.Text("make_turn#${Json.encodeToString(action)}")
         )
     }
+
+    // Close our connection
 
     override suspend fun close() {
         session?.close()

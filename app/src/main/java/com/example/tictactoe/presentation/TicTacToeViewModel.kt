@@ -13,8 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TicTacToeViewModel @Inject constructor(
-    private val client: RealTimeMessagingClient
-): ViewModel() {
+    private val client: RealTimeMessagingClient,
+) : ViewModel() {
 
     val state = client
         .getGameStateStream()
@@ -30,7 +30,7 @@ class TicTacToeViewModel @Inject constructor(
     val showConnectionError = _showConnectionError.asStateFlow()
 
     fun finishTurn(x: Int, y: Int) {
-        if(state.value.field[y][x] != null || state.value.winningPlayer != null) {
+        if (state.value.field[y][x] != null || state.value.winningPlayer != null) {
             return
         }
 

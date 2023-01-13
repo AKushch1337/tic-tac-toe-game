@@ -20,7 +20,7 @@ fun TicTacToeField(
     modifier: Modifier = Modifier,
     playerXColor: Color = Color.Green,
     playerOColor: Color = Color.Red,
-    onTapInField: (x: Int, y: Int) -> Unit
+    onTapInField: (x: Int, y: Int) -> Unit,
 ) {
     Canvas(
         modifier = modifier
@@ -40,12 +40,12 @@ fun TicTacToeField(
                     x = x * size.width * (1 / 3f) + size.width / 6f,
                     y = y * size.height * (1 / 3f) + size.height / 6f
                 )
-                if(player == 'X') {
+                if (player == 'X') {
                     drawX(
                         color = playerXColor,
                         center = offset
                     )
-                } else if(player == 'O') {
+                } else if (player == 'O') {
                     drawO(
                         color = playerOColor,
                         center = offset
@@ -59,7 +59,7 @@ fun TicTacToeField(
 private fun DrawScope.drawO(
     color: Color,
     center: Offset,
-    size: Size = Size(50.dp.toPx(), 50.dp.toPx())
+    size: Size = Size(50.dp.toPx(), 50.dp.toPx()),
 ) {
     drawCircle(
         color = color,
@@ -74,7 +74,7 @@ private fun DrawScope.drawO(
 private fun DrawScope.drawX(
     color: Color,
     center: Offset,
-    size: Size = Size(50.dp.toPx(), 50.dp.toPx())
+    size: Size = Size(50.dp.toPx(), 50.dp.toPx()),
 ) {
     drawLine(
         color = color,
