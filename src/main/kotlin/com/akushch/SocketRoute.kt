@@ -14,19 +14,19 @@ fun Route.socket(game: TicTacToeGame) {
         webSocket {
             val player = game.connectPlayer(this)
 
-            if(player == null) {
+            if (player == null) {
                 close(CloseReason(CloseReason.Codes.CANNOT_ACCEPT, "Two players already connected"))
                 return@webSocket
             }
 
             try {
                 incoming.consumeEach { frame ->
-                    if(frame is Frame.Text) {
+                    if (frame is Frame.Text) {
                         val action = extractAction(frame.readText())
                         game.finishTurn(player, action.x, action.y)
                     }
                 }
-            } catch(e: Exception) {
+            } catch (e: Exception) {
                 e.printStackTrace()
             } finally {
                 game.disconnectPlayer(player)
@@ -38,7 +38,7 @@ fun Route.socket(game: TicTacToeGame) {
 private fun extractAction(message: String): MakeTurn {
     val type = message.substringBefore("#")
     val body = message.substringAfter("#")
-    return if(type == "make_turn") {
+    return if (type == "make_turn") {
         Json.decodeFromString(body)
     } else MakeTurn(-1, -1)
 }
