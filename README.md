@@ -1,5 +1,6 @@
 # Tic Tac Toe
 > The Kotlin Android app to play Tic Tac Toe with your friend
+> 
 > View the code [_here_](https://github.com/AKushch1337/tic-tac-toe-game/tree/master/app/src/main/java/com/example/tictactoe). 
 -------------------------------
 ## General Information
