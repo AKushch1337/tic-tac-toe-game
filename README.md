@@ -1,6 +1,6 @@
 # Tic Tac Toe
 > The Kotlin Android app to play Tic Tac Toe with your friend
-> 
+> View the code [_here_](https://github.com/AKushch1337/tic-tac-toe-game/tree/master/app/src/main/java/com/example/tictactoe). 
 -------------------------------
 ## General Information
 - The application is a game. 
@@ -31,7 +31,7 @@
 ```kotlin
 url("ws://192.168.0.168:8080/play")
 ```
-- change 192.168.0.168:8080 to your local ip address
+- change 192.168.0.168 to your local ip address. Leave the port(8080) the same.
 
 ## Project Status
 Project is: _in progress_
