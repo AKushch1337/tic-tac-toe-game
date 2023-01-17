@@ -25,6 +25,10 @@
 
 ## Setup
 
+- Clone the backend project
+
+- Download the game using APK from this github repo
+
 - Run Application.kt in the backend project
 
 - In file app/src/main/java/com/example/tictactoe/data/KtorRealTimeMessagingClient.kt find 
@@ -33,6 +37,12 @@
 url("ws://192.168.0.168:8080/play")
 ```
 - change 192.168.0.168 to your local ip address. Leave the port(8080) the same.
+
+## Screenshots
+![Game screenshot](app/src/main/res/drawable/example1.png)
+![Game screenshot](app/src/main/res/drawable/example2.png)
+![Game screenshot](app/src/main/res/drawable/example3.png)
+![Game screenshot](app/src/main/res/drawable/example4.png)
 
 ## Project Status
 Project is: _in progress_
