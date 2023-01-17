@@ -41,6 +41,7 @@ url("ws://192.168.0.168:8080/play")
 ## Screenshots
 ![Game screenshot](app/src/main/res/drawable/example1.png)
 ![Game screenshot](app/src/main/res/drawable/example2.png)
+
 ![Game screenshot](app/src/main/res/drawable/example3.png)
 ![Game screenshot](app/src/main/res/drawable/example4.png)
 
